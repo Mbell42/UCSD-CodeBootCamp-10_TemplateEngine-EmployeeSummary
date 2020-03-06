@@ -21,3 +21,5 @@ const employee = new Employee();
 
 // Console out the employee's parameters.
 employee.printInfo();
+
+module.exports = Employee;

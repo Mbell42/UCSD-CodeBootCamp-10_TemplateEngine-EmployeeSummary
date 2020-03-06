@@ -30,3 +30,5 @@ Progress:
 2020.03.06_0635 - Updated function for prompts in 'app.js', including adding a switch case for the prompts based on employee jobTitle as well as reordering the prompts to make more sense.  I then chained the function that will create employee 'objects' based on the user's input to run after the user has answered all prompts.
 
 2020.03.06_0647 - Began first pass of building 'employee' class in 'Employee.js'.
+
+2020.03.06_0703 - Added 'module.export' to 'Employee.js'.  I then began first pass at extending 'Employee' class into 'Engineer' subclass in 'Engineer.js'.
