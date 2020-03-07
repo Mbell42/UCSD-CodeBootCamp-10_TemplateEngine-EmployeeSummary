@@ -42,3 +42,5 @@ Progress:
 2020.03.06_1918 - I ran 'npm i' from gitBash in 'develop' folder, creating 'package-lock.json'.  I ran into an issue initially with the following error: 'Maximum call stack size exceeded', though I was able to get around this by forcing npm to clear cache and then re-running 'npm install'.
 
 2020.03.07_0035 - I added a require() for 'Employee' to 'app.js' and updated the name of the answer of several prompts, including updating corresponding locations in '.js' files in /develop/lib.  I then added a '.gitignore' file to /develop.
+
+2020.03.07_0150 - I updated 'app.js' to include a .catch() function.  I am researching solutions to making employee objects from the answers.
