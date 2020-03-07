@@ -1,3 +1,5 @@
+
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -39,23 +41,23 @@ function userPrompts() {
         },
         {
         type: "checkbox",
-        message: "What is this employee's job title?",
-        name: "jobTitle",
+        message: "What is this employee's role?",
+        name: "role",
         choices: [
             "Manager",
             "Engineer", 
             "Intern"
         ]
         }
-    // Based on employee's jobTitle, prompt the following in each case.
+    // Based on employee's role, prompt the following in each case.
     ]).then(function() {
-        switch (jobTitle) {
+        switch (role) {
             case "Manager":
                 // Prompt requesting info about case-specific Team Member details.
                 inquirer.prompt([
                     {
                         type: "input",
-                        name: "office",
+                        name: "officeNumber",
                         message: "What is this Team Manager's office number?"
                     }]);
             case "Engineer":
@@ -63,8 +65,8 @@ function userPrompts() {
                 inquirer.prompt([
                     {
                         type: "input",
-                        name: "gitHub",
-                        message: "What is this Engineer's gitHub?"
+                        name: "github",
+                        message: "What is this Engineer's github?"
                     }]);
             case "Intern":
                 // Prompt requesting info about case-specific Team Member details.
@@ -79,8 +81,10 @@ function userPrompts() {
 };
 // When program first runs, user will be prompted with above questions.
 // After user has answered all prompts, then...
-userPrompts().then(function(data) {
-        // Create objects for each team member.
+userPrompts().then(function(answers) {
+    // Create objects for each team member.
+
+    // Create array to contain all employee objects.
     const employees = "";
         console.log("employees: \n" + employees);
 });

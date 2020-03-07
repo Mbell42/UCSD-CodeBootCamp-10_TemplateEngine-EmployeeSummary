@@ -4,9 +4,9 @@ const Employee = require("./Employee");
 // Create sub-class of 'Intern' by extending class 'Employee'.
 class Intern extends Employee {
     // Defining subclass parameters
-    constructor(name,id,email,jobTitle,school) {
+    constructor(name,id,email,role,school) {
         // Grabbing superclass parameters as dependencies
-        super(name,id,email,jobTitle);
+        super(name,id,email,role);
         this.school = school;
     };
     // Console out the subclass parameters.
@@ -14,7 +14,7 @@ class Intern extends Employee {
         console.log(`name: ${this.name}`);
         console.log(`name: ${this.id}`);
         console.log(`name: ${this.email}`);
-        console.log(`name: ${this.jobTitle}`);      
+        console.log(`name: ${this.role}`);      
         console.log(`name: ${this.school}`);      
     };
 };
