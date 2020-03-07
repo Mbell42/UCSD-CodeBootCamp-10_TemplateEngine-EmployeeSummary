@@ -56,3 +56,4 @@ Progress:
 2020.03.07_0305 - I ported y code from 'app.js' to 'index,js', and then renamed the old 'app.js' to 'app_deprecated.js', and then renamed 'index.js' to 'app.js'.
 
 2020.03.07_0317 - I added an example employee-card template to 'main.html', so that I can see what I am working with when I begin styling the employee cards to better match the reference given. 
+
