@@ -7,7 +7,7 @@ class Engineer extends Employee {
     constructor(name,id,email,role,github) {
         // Grabbing superclass parameters as dependencies
         super(name,id,email,role);
-        this.gitHub = github;
+        this.github = github;
     };
     // Console out the subclass parameters.
     printInfo() {
@@ -16,6 +16,12 @@ class Engineer extends Employee {
         console.log(`email: ${this.email}`);
         console.log(`role: ${this.role}`);      
         console.log(`github: ${this.github}`);      
+    };
+    getRole() {
+        return this.role;
+    };
+    getGithub() {
+        return this.github;
     };
 };
 

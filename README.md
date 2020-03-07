@@ -48,3 +48,5 @@ Progress:
 2020.03.07_0203 - I updated format of and added a for loop to newEmployee() function in 'app.js'.
 
 2020.03.07_0233 - I updated name of anewEmployee() function in 'app.js' to newTeam(). I then corrected the console.logs in each of the '.js' files in /develop/lib.  I then alternated testing and updating/correcting my code in 'Employee.js' until all tests passed in 'Employee.test.js'.
+
+2020.03.07_0249 - I alternated testing and updating/correcting my code in 'Engineer.js' until all tests passed in 'Engineer.test.js'.  It should be noted that the format of the tests required me to update them to match extended class formats.  No other test functionality was changed.
