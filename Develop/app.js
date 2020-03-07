@@ -22,66 +22,72 @@ const newEmployee = () => {
         type: "input",
         name: "teamCount",
         message: "How many employees will be assigned to this project?"
-        },
-        // Prompts requesting info about common Team Member details.
-        {
-        type: "input",
-        name: "name",
-        message: "What is the employee's name?"
-        },
-        {
-            type: "input",
-            name: "id",
-            message: "What is this employee's id?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is this employee's email address?"
-        },
-        {
-        type: "checkbox",
-        message: "What is this employee's role?",
-        name: "role",
-        choices: [
-            "Manager",
-            "Engineer", 
-            "Intern"
-        ]
-        }
-    // Based on employee's role, prompt the following in each case.
-    ]).then(function() {
-        switch (role) {
-            case "Manager":
-                // Prompt requesting info about case-specific Team Member details.
+        }])
+        .then( () => {
+            for(i=0; i<teamCount; i++) {
                 inquirer.prompt([
+                    // Prompts requesting info about common Team Member details.
+                    {
+                    type: "input",
+                    name: "name",
+                    message: "What is the employee's name?"
+                    },
                     {
                         type: "input",
-                        name: "officeNumber",
-                        message: "What is this Team Manager's office number?"
-                    }]);
-            case "Engineer":
-                // Prompt requesting info about case-specific Team Member details.
-                inquirer.prompt([
+                        name: "id",
+                        message: "What is this employee's id?"
+                    },
                     {
                         type: "input",
-                        name: "github",
-                        message: "What is this Engineer's github?"
-                    }]);
-            case "Intern":
-                // Prompt requesting info about case-specific Team Member details.
-                inquirer.prompt([
+                        name: "email",
+                        message: "What is this employee's email address?"
+                    },
                     {
-                        type: "input",
-                        name: "school",
-                        message: "What is this Intern's school?"
-                    }]);
-        };
-    });
+                    type: "checkbox",
+                    message: "What is this employee's role?",
+                    name: "role",
+                    choices: [
+                        "Manager",
+                        "Engineer", 
+                        "Intern"
+                    ]
+                    }
+                // Based on employee's role, prompt the following in each case.
+                ])
+                .then( () => {
+                    switch (role) {
+                        case "Manager":
+                            // Prompt requesting info about case-specific Team Member details.
+                            inquirer.prompt([
+                                {
+                                    type: "input",
+                                    name: "officeNumber",
+                                    message: "What is this Team Manager's office number?"
+                                }]);
+                        case "Engineer":
+                            // Prompt requesting info about case-specific Team Member details.
+                            inquirer.prompt([
+                                {
+                                    type: "input",
+                                    name: "github",
+                                    message: "What is this Engineer's github?"
+                                }]);
+                        case "Intern":
+                            // Prompt requesting info about case-specific Team Member details.
+                            inquirer.prompt([
+                                {
+                                    type: "input",
+                                    name: "school",
+                                    message: "What is this Intern's school?"
+                                }]);
+                    };
+                });
+            };
+        });     
 };
 // When program first runs, user will be prompted with above questions.
-// After user has answered all prompts, then...
-newEmployee().then(function(answers) {
+newEmployee().then( (answers) => {
+    // After user has answered all prompts, then...
     // Console Log user's answers
     console.log(answers);
     // Create objects for each team member.
@@ -89,7 +95,10 @@ newEmployee().then(function(answers) {
     // Create array to contain all employee objects.
     const employees = "";
         console.log("employees: \n" + employees);
-}).catch(err =>);
+})
+.catch(err => {
+    if (err) console.log(err); 
+});
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!

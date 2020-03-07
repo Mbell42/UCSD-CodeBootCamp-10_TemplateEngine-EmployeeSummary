@@ -44,3 +44,5 @@ Progress:
 2020.03.07_0035 - I added a require() for 'Employee' to 'app.js' and updated the name of the answer of several prompts, including updating corresponding locations in '.js' files in /develop/lib.  I then added a '.gitignore' file to /develop.
 
 2020.03.07_0150 - I updated 'app.js' to include a .catch() function.  I am researching solutions to making employee objects from the answers.
+
+2020.03.07_0203 - I updated format of and added a for loop to newEmployee() function in 'app.js'.
