@@ -17,6 +17,12 @@ class Manager extends Employee {
         console.log(`role: ${this.role}`);      
         console.log(`officeNumber: ${this.officeNumber}`);      
     };
+    getRole() {
+        return this.role;
+    };
+    getOfficeNumber() {
+        return this.officeNumber;
+    };
 };
 
 // Creating constant for each manager.
@@ -25,4 +31,4 @@ const manager = new Manager();
 // Console out the manager's parameters.
 manager.printInfo();
 
-module.exports = manager;
+module.exports = Manager;

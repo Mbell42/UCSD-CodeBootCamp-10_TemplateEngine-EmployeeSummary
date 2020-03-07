@@ -12,10 +12,16 @@ class Intern extends Employee {
     // Console out the subclass parameters.
     printInfo() {
         console.log(`name: ${this.name}`);
-        console.log(`od: ${this.id}`);
+        console.log(`id: ${this.id}`);
         console.log(`email: ${this.email}`);
         console.log(`role: ${this.role}`);      
         console.log(`school: ${this.school}`);      
+    };
+    getRole() {
+        return this.role;
+    };
+    getSchool() {
+        return this.school;
     };
 };
 
