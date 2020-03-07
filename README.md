@@ -46,3 +46,5 @@ Progress:
 2020.03.07_0150 - I updated 'app.js' to include a .catch() function.  I am researching solutions to making employee objects from the answers.
 
 2020.03.07_0203 - I updated format of and added a for loop to newEmployee() function in 'app.js'.
+
+2020.03.07_0233 - I updated name of anewEmployee() function in 'app.js' to newTeam(). I then corrected the console.logs in each of the '.js' files in /develop/lib.  I then alternated testing and updating/correcting my code in 'Employee.js' until all tests passed in 'Employee.test.js'.

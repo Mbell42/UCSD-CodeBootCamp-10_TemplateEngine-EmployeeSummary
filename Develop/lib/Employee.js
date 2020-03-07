@@ -10,9 +10,21 @@ class Employee {
     // Console out the class parameters.
     printInfo() {
         console.log(`name: ${this.name}`);
-        console.log(`name: ${this.id}`);
-        console.log(`name: ${this.email}`);
-        console.log(`name: ${this.role}`);      
+        console.log(`id: ${this.id}`);
+        console.log(`email: ${this.email}`);
+        console.log(`role: ${this.role}`);      
+    };
+    getName() {
+        return this.name;
+    };
+    getId() {
+        return this.id;
+    };
+    getEmail() {
+        return this.email;
+    };
+    getRole() {
+        return this.role;
     };
 };
 
