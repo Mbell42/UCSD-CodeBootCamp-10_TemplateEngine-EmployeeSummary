@@ -54,3 +54,5 @@ Progress:
 2020.03.07_0302 - I alternated testing and updating/correcting my code in 'Intern.js' and 'Manager.js' until all tests passed in 'Intern.test.js' and 'Manager.test.js', respectively.  It should be noted that the format of the tests required me to update them to match extended class formats.  No other test functionality was changed.
 
 2020.03.07_0305 - I ported y code from 'app.js' to 'index,js', and then renamed the old 'app.js' to 'app_deprecated.js', and then renamed 'index.js' to 'app.js'.
+
+2020.03.07_0317 - I added an example employee-card template to 'main.html', so that I can see what I am working with when I begin styling the employee cards to better match the reference given. 
