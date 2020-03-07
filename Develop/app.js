@@ -55,7 +55,7 @@ function userPrompts() {
                 inquirer.prompt([
                     {
                         type: "input",
-                        name: "officeManager",
+                        name: "office",
                         message: "What is this Team Manager's office number?"
                     }]);
             case "Engineer":
