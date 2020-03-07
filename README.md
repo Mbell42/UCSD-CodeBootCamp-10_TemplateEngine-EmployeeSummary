@@ -34,3 +34,5 @@ Progress:
 2020.03.06_0703 - Added 'module.export' to 'Employee.js'.  I then began first pass at extending 'Employee' class into 'Engineer' subclass in 'Engineer.js'.
 
 2020.03.06_1902 - I completed first pass at extending 'Employee' class into 'Engineer' subclass in 'Engineer.js', and then added 'module.export' to 'Engineer.js'. 
+
+2020.03.06_1906 - I added some explanatory comments to 'Engineer.js', and then copied over and intergrated code from 'Engineer.js' to 'Intern.js'.
