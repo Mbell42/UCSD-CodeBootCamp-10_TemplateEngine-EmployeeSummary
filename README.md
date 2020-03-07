@@ -38,3 +38,5 @@ Progress:
 2020.03.06_1906 - I added some explanatory comments to 'Engineer.js', and then copied over and intergrated code from 'Engineer.js' to 'Intern.js'.
 
 2020.03.06_1910 - I copied over and intergrated code from 'Intern.js' to 'Manager.js'.
+
+2020.03.06_1918 - I ran 'npm i' from gitBash in 'develop' folder, creating 'package-lock.json'.  I ran into an issue initially with the following error: 'Maximum call stack size exceeded', though I was able to get around this by forcing npm to clear cache and then re-running 'npm install'.
