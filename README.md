@@ -59,3 +59,5 @@ Progress:
 
 2020.03.07_1815 - I have been test-running 'app.js' and altering the order and format of the code in the newEmployee() function. I first attempted adding a newRole() function, but ended up commenting it out in favor of keeping all prompts within the newEmployee() function.
 
+2020.03.07_2052 - I am trying to get my switch case function to work within 'app.js', such that it asks the user for employee details based on the employee's role.  I have been able to get the switch case to run without type errors now, however, it is currently reverting to 'default', even though it appears to me that the cases are being met.  
+

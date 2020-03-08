@@ -9,8 +9,8 @@ const util = require("util");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
+// const readFileAsync = util.promisify(fs.readFile);
+// const writeFileAsync = util.promisify(fs.writeFile);
 
 const render = require("./lib/htmlRenderer");
 
@@ -59,9 +59,15 @@ const newEmployee = () => {
     // })
     .then(function(response) {
         const employeeName = response.name;
+        const employeeId = response.id;
+        const emplyeeEmail = response.email;
+        const employeeRole = response.role;
+        console.log(employeeRole);
+        
+
         const filename = "./employees/employee_" + employeeName.toLowerCase().split(' ').join('') + ".json";
         
-        fs.writeFile(filename, JSON.stringify(response, null, '\t'), function(err) {
+        fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
             if (err) {
                 return console.log(err);
             }
@@ -69,13 +75,9 @@ const newEmployee = () => {
             // After user has answered all prompts, then...
             // Console Log user's answers
             console.log(response);
-            console.log(filename);
-            
-            readFileAsync(filename, "utf8").then(function(data) {
-                // Parse the JSON string to an object
-                const employee = JSON.parse(data);                    
-                // Based on employee's role, prompt the following in each case.
-                switch (employee.role) {
+            console.log(filename + "\n");
+            function addRoleInfo() {
+                switch (employeeRole) {
                     case "Manager":
                         // Prompt requesting info about case-specific Team Member details.
                         inquirer.prompt([
@@ -84,7 +86,6 @@ const newEmployee = () => {
                                 name: "officeNumber",
                                 message: "What is this Team Manager's office number?"
                             }]).then(function(response) {
-                                    const filename = "./employees/employee_" + response.officeNumber.toLowerCase().split(' ').join('') + ".json";
                                     fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
                                         if (err) {
                                             return console.log(err);
@@ -107,7 +108,6 @@ const newEmployee = () => {
                                 name: "github",
                                 message: "What is this Engineer's github?"
                             }]).then(function(response) {
-                                const filename = "./employees/employee_" + response.github.toLowerCase().split(' ').join('') + ".json";
                                 fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
                                     if (err) {
                                         return console.log(err);
@@ -130,7 +130,6 @@ const newEmployee = () => {
                                 name: "school",
                                 message: "What is this Intern's school?"
                             }]).then(function(response) {
-                                const filename = "./employees/employee_" + response.school.toLowerCase().split(' ').join('') + ".json";
                                 fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
                                     if (err) {
                                         return console.log(err);
@@ -144,95 +143,100 @@ const newEmployee = () => {
                             .catch(err => {
                                 if (err) console.log(err); 
                             }); 
-                        }
-                    console.log(employee); 
-                });
-        });
+                    default : 
+                        console.log("Employee must have a valid role!");
+                }
+            };
+            addRoleInfo();
+        })             
+            
     })
     .catch(err => {
         if (err) console.log(err); 
     });     
 };
-const newRole = () => {
-    // Grabbing newly created employee as dependency
-    readFileAsync("./employees/employee_" + employeeName.toLowerCase().split(' ').join(''), "utf8").then(function(data) {
-        // Parse the JSON string to an object
-        const employee = JSON.parse(data);                    
-        // Based on employee's role, prompt the following in each case.
-        switch (employee.role) {
-            case "Manager":
-                // Prompt requesting info about case-specific Team Member details.
-                inquirer.prompt([
-                    {
-                        type: "input",
-                        name: "officeNumber",
-                        message: "What is this Team Manager's office number?"
-                    }]).then(function(response) {
-                            const filename = "./employees/employee_" + response.officeNumber.toLowerCase().split(' ').join('') + ".json";
-                            fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
-                                if (err) {
-                                    return console.log(err);
-                                }
-                                console.log("Successfully added Managers office number!");
-                                // After user has answered all prompts, then...
-                                // Console Log user's answers
-                                console.log(response);
-                            });
-                        })
-                        .catch(err => {
-                            if (err) console.log(err); 
-                        }); 
 
-            case "Engineer":
-                // Prompt requesting info about case-specific Team Member details.
-                inquirer.prompt([
-                    {
-                        type: "input",
-                        name: "github",
-                        message: "What is this Engineer's github?"
-                    }]).then(function(response) {
-                        const filename = "./employees/employee_" + response.github.toLowerCase().split(' ').join('') + ".json";
-                        fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
-                            if (err) {
-                                return console.log(err);
-                            }
-                            console.log("Successfully added Engineer's GitHub!");
-                            // After user has answered all prompts, then...
-                            // Console Log user's answers
-                            console.log(response);
-                        });
-                    })
-                    .catch(err => {
-                        if (err) console.log(err); 
-                    }); 
+// const newRole = () => {
+//     // Grabbing newly created employee as dependency
+//     readFileAsync("./employees/employee_" + employeeName.toLowerCase().split(' ').join(''), "utf8").then(function(data) {
+//         // Parse the JSON string to an object
+//         const employee = JSON.parse(data);                    
+//         // Based on employee's role, prompt the following in each case.
+//         switch (employee.role) {
+//             case "Manager":
+//                 // Prompt requesting info about case-specific Team Member details.
+//                 inquirer.prompt([
+//                     {
+//                         type: "input",
+//                         name: "officeNumber",
+//                         message: "What is this Team Manager's office number?"
+//                     }]).then(function(response) {
+//                             const filename = "./employees/employee_" + response.officeNumber.toLowerCase().split(' ').join('') + ".json";
+//                             fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
+//                                 if (err) {
+//                                     return console.log(err);
+//                                 }
+//                                 console.log("Successfully added Managers office number!");
+//                                 // After user has answered all prompts, then...
+//                                 // Console Log user's answers
+//                                 console.log(response);
+//                             });
+//                         })
+//                         .catch(err => {
+//                             if (err) console.log(err); 
+//                         }); 
 
-            case "Intern":
-                // Prompt requesting info about case-specific Team Member details.
-                inquirer.prompt([
-                    {
-                        type: "input",
-                        name: "school",
-                        message: "What is this Intern's school?"
-                    }]).then(function(response) {
-                        const filename = "./employees/employee_" + response.school.toLowerCase().split(' ').join('') + ".json";
-                        fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
-                            if (err) {
-                                return console.log(err);
-                            }
-                            console.log("Successfully added Intern's school!");
-                            // After user has answered all prompts, then...
-                            // Console Log user's answers
-                            console.log(response);
-                        });
-                    })
-                    .catch(err => {
-                        if (err) console.log(err); 
-                    }); 
-                }
-            console.log(employee); 
-        });
+//             case "Engineer":
+//                 // Prompt requesting info about case-specific Team Member details.
+//                 inquirer.prompt([
+//                     {
+//                         type: "input",
+//                         name: "github",
+//                         message: "What is this Engineer's github?"
+//                     }]).then(function(response) {
+//                         const filename = "./employees/employee_" + response.github.toLowerCase().split(' ').join('') + ".json";
+//                         fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
+//                             if (err) {
+//                                 return console.log(err);
+//                             }
+//                             console.log("Successfully added Engineer's GitHub!");
+//                             // After user has answered all prompts, then...
+//                             // Console Log user's answers
+//                             console.log(response);
+//                         });
+//                     })
+//                     .catch(err => {
+//                         if (err) console.log(err); 
+//                     }); 
+
+//             case "Intern":
+//                 // Prompt requesting info about case-specific Team Member details.
+//                 inquirer.prompt([
+//                     {
+//                         type: "input",
+//                         name: "school",
+//                         message: "What is this Intern's school?"
+//                     }]).then(function(response) {
+//                         const filename = "./employees/employee_" + response.school.toLowerCase().split(' ').join('') + ".json";
+//                         fs.appendFile(filename, JSON.stringify(response, null, '\t'), function(err) {
+//                             if (err) {
+//                                 return console.log(err);
+//                             }
+//                             console.log("Successfully added Intern's school!");
+//                             // After user has answered all prompts, then...
+//                             // Console Log user's answers
+//                             console.log(response);
+//                         });
+//                     })
+//                     .catch(err => {
+//                         if (err) console.log(err); 
+//                     }); 
+//                 }
+//             console.log(employee); 
+//         });
     
-};
+// };
+
 // When program first runs, user will be prompted with above questions.
 newEmployee();
 // newRole();
