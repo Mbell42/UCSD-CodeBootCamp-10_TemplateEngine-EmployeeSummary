@@ -23,6 +23,7 @@ const newTeam = () => {
         message: "How many employees will be assigned to this project?"
         }])
         .then( () => {
+            
             for(i=0; i<teamCount; i++) {
                 inquirer.prompt([
                     // Prompts requesting info about common Team Member details.
@@ -49,10 +50,10 @@ const newTeam = () => {
                         "Manager",
                         "Engineer", 
                         "Intern"
-                    ]
+                     ]
                     }
-                // Based on employee's role, prompt the following in each case.
                 ])
+                // Based on employee's role, prompt the following in each case.
                 .then( () => {
                     switch (role) {
                         case "Manager":
@@ -102,7 +103,7 @@ newTeam();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-render(employees);
+// render(employees);
 // After you have your html, you're no ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
