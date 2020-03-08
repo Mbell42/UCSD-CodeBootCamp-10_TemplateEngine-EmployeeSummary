@@ -57,3 +57,5 @@ Progress:
 
 2020.03.07_0317 - I added an example employee-card template to 'main.html', so that I can see what I am working with when I begin styling the employee cards to better match the reference given. 
 
+2020.03.07_1815 - I have been test-running 'app.js' and altering the order and format of the code in the newEmployee() function. I first attempted adding a newRole() function, but ended up commenting it out in favor of keeping all prompts within the newEmployee() function.
+
