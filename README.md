@@ -61,3 +61,4 @@ Progress:
 
 2020.03.07_2052 - I am trying to get my switch case function to work within 'app.js', such that it asks the user for employee details based on the employee's role.  I have been able to get the switch case to run without type errors now, however, it is currently reverting to 'default', even though it appears to me that the cases are being met.  
 
+2020.03.12_0403 - I have begun to implement my fixes to 'app.js'.  This includes commenting out the code block of prompts I had previously, and replacing it with a new structure that seperates the prompts into their own functions.  This helps with organization and functionality.  I added a new const containing an empty array to contain the team, and built new functions 'newManager', 'newEmployee', and 'newTeam'.
