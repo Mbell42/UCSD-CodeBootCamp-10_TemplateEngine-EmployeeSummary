@@ -1,17 +1,15 @@
 class Employee {
     // Setting class parameters.
-    constructor(name,id,email,role) {
+    constructor(name,id,email) {
         this.name = name;
         this.id = id;
         this. email = email;
-        this.role = role;
     };
     // Console out the class parameters.
     printInfo() {
         console.log(`name: ${this.name}`);
         console.log(`id: ${this.id}`);
-        console.log(`email: ${this.email}`);
-        console.log(`role: ${this.role}`);      
+        console.log(`email: ${this.email}`);    
     };
     getName() {
         return this.name;
@@ -23,10 +21,9 @@ class Employee {
         return this.email;
     };
     getRole() {
-        return this.role;
+        return "Employee";
     };
-};
-
+}
 // Creating constant for each employee.
 const employee = new Employee();
 

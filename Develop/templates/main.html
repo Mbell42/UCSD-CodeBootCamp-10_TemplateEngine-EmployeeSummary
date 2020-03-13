@@ -14,31 +14,15 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 jumbotron mb-3 team-heading">
-                    <h1 class="text-center">My Team</h1>
+                <div class="col-12 jumbotron mb-3 team-heading bg-info">
+                    <h1 class="text-center display-1">My Team</h1>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="team-area col-12 d-flex justify-content-center">
-                
-                    <!-- Begin Example Template -->
-                    <div class="card employee-card">
-                        <div class="card-header">
-                            <h2 class="card-title">{{ ExampleName }}</h2>
-                            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>{{ ExampleRole }}</h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                <li class="list-group-item">ID: {{ ExampleId }}</li>
-                                <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ ExampleEmail }}</a></li>
-                                <li class="list-group-item">Detail: {{ ExampleDetail }}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Example Template -->
-
+                    {{ team }}
                 </div>
             </div>
         </div>
